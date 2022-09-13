@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/icon.jpg">
+    <title>Give Your Feedback</title>
+</head>
+<body>
+    <div class="container">
+        <form action="https://sheetdb.io/api/v1/91qp7qk7x72dr" method="post" id="sheetdb-form">
+            <h3>GIVE YOUR VALUABLE FEEDBACK HERE.</h3>
+            <input type="text" id="name" name="data[name]" placeholder="Your Name" required>
+            <input type="email" id="email" name="data[email]" placeholder="Your Email" required>
+            <textarea id="message" rows="4" name="data[message]" placeholder="Your Feedback" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    
+    
+    <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(document.getElementById('sheetdb-form')),                
+            }).then
+            (response => response.json())
+            .then((html) => {
+                alert("Thank you for your feedback.");
+                document.getElementById('sheetdb-form').reset();
+                window.location.href = "../docs/index.html";
+
+            });
+        });
+    </script>
+</body>
+</html>

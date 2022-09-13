@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>CONNECT '22</title>
+</head>
+<body>
+    <div class="hero">
+       <div class="title">
+        <h1> '22 FEEDBACK</h1>
+        <div class="back-text">
+            <span>C</span>
+            <span>O</span>
+            <span>N</span>
+            <span>N</span>
+            <span>E</span>
+            <span>C</span>
+            <span>T</span>
+        </div>
+        <a href="../html/home.html" class="btn">Give Feedback</a>
+       </div> 
+       
+    </div>
+    
+    <script>
+        let spanTexts = document.getElementsByTagName('span');
+        window.onload = function(){
+
+            for(spanTexts of spanTexts){
+                spanTexts.classList.add('active');
+                
+            }
+        } 
+    </script>
+</body>
+</html>
